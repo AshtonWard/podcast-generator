@@ -1,0 +1,19 @@
+name: "Podcast Feed Generator"
+author: "Ashton Ward"
+description: "A GitHub Action to generate a podcast feed from markdown files in a repository."
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "git-branch"
+  color: "green"
+inputs:
+  email:
+    description: "Email address for the commit author."
+    required: true
+    default: "${{ github.actor }}@localhost"
+  name:
+    description: "Name for the commit author."
+    required: true
+    default: "${{ github.actor }}"
+  
